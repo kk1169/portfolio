@@ -1,0 +1,182 @@
+:root {
+  --primary-color-50: #fdf2f7;
+  --primary-color-100: #fde6f1;
+  --primary-color-200: #fdcde4;
+  --primary-color-300: #fca5cd;
+  --primary-color-400: #f96dab;
+  --primary-color-500: #f2428c;
+  --primary-color-600: #e11e66;
+  --primary-color-700: #c4124f;
+  --primary-color-800: #a21241;
+  --primary-color-900: #871439;
+  --primary-color-950: #53041d;
+
+  --secondary-color-50: #eafff5;
+  --secondary-color-100: #cdfee5;
+  --secondary-color-200: #a0fad1;
+  --secondary-color-300: #63f2b8;
+  --secondary-color-400: #1ee199;
+  --secondary-color-500: #00c985;
+  --secondary-color-600: #00a46d;
+  --secondary-color-700: #00835b;
+  --secondary-color-800: #00674a;
+  --secondary-color-900: #00553e;
+  --secondary-color-950: #003024;
+
+  --black-color: #000;
+  --white-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: var(--primary-color-50);
+  color: var(--black-color);
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 54px;
+  padding: 0 15px;
+  background-color: var(--primary-color-100);
+}
+
+header .fe-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--primary-color-600);
+}
+
+header .fe-nav {
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 75%;
+  background-color: var(--primary-color-950);
+  display: none;
+}
+
+header .fe-nav.show {
+  display: block;
+}
+
+header .fe-nav .fe-nav-head {
+  display: flex;
+  justify-content: end;
+  padding: 5px;
+}
+
+header .fe-nav .fe-nav-ul {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+header .fe-nav .fe-nav-ul li a {
+  padding: 0px 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--primary-color-100);
+}
+
+header .fe-nav .fe-nav-ul li a:hover {
+  color: var(--primary-color-600);
+}
+
+/* common */
+.fe-btn {
+  border: none;
+  background-color: var(--primary-color-300);
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.fe-hide {
+  display: none;
+}
+
+.fe-hide-sm {
+  display: block;
+}
+
+.fe-hide-md {
+  display: block;
+}
+
+.fe-hide-lg {
+  display: block;
+}
+
+/******************************************** Breakpoints **********************************************/
+
+/* sm */
+@media (min-width: 576px) {
+  .fe-hide {
+    display: block;
+  }
+
+  header .fe-nav {
+    width: 55%;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  header .fe-nav .fe-nav-ul {
+    display: flex;
+  }
+
+  .fe-hide-sm {
+    display: none;
+  }
+
+  header .fe-nav {
+    height: 100%;
+    position: static;
+    width: 75%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  header .fe-nav .fe-nav-head {
+    display: none;
+  }
+
+  header .fe-nav .fe-nav-ul {
+    flex-direction: row;
+  }
+
+  header .fe-nav .fe-nav-ul li a {
+    color: var(--black-color);
+  }
+}
+
+/* lg */
+@media (min-width: 992px) {
+  .fe-hide-md {
+    display: none;
+  }
+}
+
+/* xl */
+@media (min-width: 1200px) {
+  .fe-hide-lg {
+    display: none;
+  }
+}
+
+/* xxl */
+@media (min-width: 1400px) {
+}
